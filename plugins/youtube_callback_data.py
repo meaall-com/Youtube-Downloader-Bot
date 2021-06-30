@@ -49,7 +49,7 @@ async def ytdl(_, message):
         os.makedirs(output_directory)
     thumb_image_path = f"{output_directory}.jpg"
     im.save(thumb_image_path,"jpeg")
-    await message.edit_text(title)
+    await message.edit_text(sentm, title)
     await sentm.delete()
     #print(q.message.chat.id)
     # Callback Data Check
