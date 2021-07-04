@@ -207,7 +207,7 @@ async def send_file(c, q, med, filename):
             InlineKeyboardMarkup([[InlineKeyboardButton("Uploading...", callback_data="down")]]))
         await c.send_chat_action(chat_id=q.message.chat.id, action="upload_document")
         # this one is not working
-        await send_video(video=med)
+        await Client.send_video(video=med)
     except Exception as e:
         print(e)
         await q.edit_message_text(e)
