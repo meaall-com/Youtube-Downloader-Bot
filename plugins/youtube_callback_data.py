@@ -116,8 +116,9 @@ async def ytdl(_, message):
 
 
     await sentm.reply_chat_action("upload_video")
-        # this one is not working
-    await Client.edit_message_media(message.chat.id, message.message_id, med)
+
+
+    await Client.edit_message_media(message.chat.id, message.message_id, media=med)
 
 
 
