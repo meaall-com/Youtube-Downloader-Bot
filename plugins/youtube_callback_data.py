@@ -120,7 +120,7 @@ async def ytdl(_, message):
     await sentm.reply_chat_action("upload_video")
 
 
-    await Client.edit_message_media(ids, messageid, med, file_name=filename)
+    await Client.edit_message_media(ids, messageid, med, filename)
 
 
 
