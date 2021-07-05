@@ -116,7 +116,13 @@ async def ytdl(_, message):
 
     await sentm.reply_chat_action("upload_video")
         # this one is not working
-    await sentm.reply_video(med)
+    await Client.send_video(chat_id="@zyzazyz", video=med)
+
+
+
+
+
+
 
 
 
