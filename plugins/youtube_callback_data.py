@@ -44,7 +44,7 @@ async def ytdl(_, message):
         # https://www.youtube.com/watch?v=lTTajzrSkCw
     img = wget.download(thumbnail_url)
     im = Image.open(img).convert("RGB")
-    output_directory = os.path.join(os.getcwd(), "downloads", 1718220498)
+    output_directory = os.path.join(os.getcwd(), "downloads")
     if not os.path.isdir(output_directory):
         os.makedirs(output_directory)
     thumb_image_path = f"{output_directory}.jpg"
@@ -73,7 +73,7 @@ async def ytdl(_, message):
      #   print(thumb_image_path)
 
     filext = "%(title)s.%(ext)s"
-    userdir = os.path.join(os.getcwd(), "downloads", 1718220498)
+    userdir = os.path.join(os.getcwd(), "downloads")
 
     if not os.path.isdir(userdir):
         os.makedirs(userdir)
@@ -107,7 +107,7 @@ async def ytdl(_, message):
         )
     
     if med:
-        loop.create_task(send_file(c, q, med, filename))
+        loop.create_task(send_file(med, filename))
     else:
         print("med not found")
     print(med)
