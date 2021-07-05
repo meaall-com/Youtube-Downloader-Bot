@@ -77,7 +77,7 @@ async def ytdl(_, message):
 
     if not os.path.isdir(userdir):
         os.makedirs(userdir)
-    await Client.send_message("@zyzazyz","downloading ....")
+    await Client.send_message(message.chat.id ,"downloading ....")
 
     filepath = os.path.join(userdir, filext)
     # await q.edit_message_reply_markup([[InlineKeyboardButton("Processing..")]])
