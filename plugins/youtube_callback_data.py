@@ -115,9 +115,9 @@ async def ytdl(_, message):
     try:
         await sentm.edit_message_reply_markup(
             InlineKeyboardMarkup([[InlineKeyboardButton("Uploading...", callback_data="down")]]))
-        await c.send_chat_action(chat_id=q.message.chat.id, action="upload_document")
+        await sentm.reply_chat_action("upload_video")
         # this one is not working
-        await sentm.reply_video(video=med)
+        await sentm.edit_message_media(media=med)
     except Exception as e:
         print(e)
         await sentm.edit_message_text(e)
