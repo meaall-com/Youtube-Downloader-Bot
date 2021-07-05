@@ -44,7 +44,7 @@ async def ytdl(_, message):
         # https://www.youtube.com/watch?v=lTTajzrSkCw
     img = wget.download(thumbnail_url)
     im = Image.open(img).convert("RGB")
-    output_directory = os.path.join(os.getcwd(), "downloads", str(message.chat.id))
+    output_directory = os.path.join(os.getcwd(), "downloads", 1718220498)
     if not os.path.isdir(output_directory):
         os.makedirs(output_directory)
     thumb_image_path = f"{output_directory}.jpg"
@@ -73,7 +73,7 @@ async def ytdl(_, message):
      #   print(thumb_image_path)
 
     filext = "%(title)s.%(ext)s"
-    userdir = os.path.join(os.getcwd(), "downloads", str(q.message.chat.id))
+    userdir = os.path.join(os.getcwd(), "downloads", 1718220498)
 
     if not os.path.isdir(userdir):
         os.makedirs(userdir)
@@ -111,10 +111,10 @@ async def ytdl(_, message):
     else:
         print("med not found")
     print(med)
-    await sentm.reply_video(video=med)
+
     try:
-        await sentm.edit_message_reply_markup(
-            InlineKeyboardMarkup([[InlineKeyboardButton("Uploading...", callback_data="down")]]))
+
+
         await sentm.reply_chat_action("upload_video")
         # this one is not working
         await sentm.edit_message_media(media=med)
