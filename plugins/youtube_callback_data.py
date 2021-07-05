@@ -49,7 +49,8 @@ async def ytdl(_, message):
         os.makedirs(output_directory)
     thumb_image_path = f"{output_directory}.jpg"
     im.save(thumb_image_path,"jpeg")
-
+    await sentm.reply_photo(thumb_image_path, caption=title) 
+    await sentm.delete()
     #print(q.message.chat.id)
     # Callback Data Check
     yturl = url
@@ -116,7 +117,7 @@ async def ytdl(_, message):
 
     await sentm.reply_chat_action("upload_video")
         # this one is not working
-    await sentm.edit_media(media=med)
+    await sentm.edit_message_media(media=med)
 
 
 
