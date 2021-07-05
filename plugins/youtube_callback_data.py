@@ -105,10 +105,10 @@ async def ytdl(_, message):
             supports_streaming=True
         )
     
-    if med:
-        loop.create_task(send_file(c, q, med, filename))
-    else:
-        print("med not found")
+
+
+
+   
     print(med)
 
 
