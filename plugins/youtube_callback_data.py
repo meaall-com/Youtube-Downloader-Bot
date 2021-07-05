@@ -77,8 +77,8 @@ async def ytdl(_, message):
 
     if not os.path.isdir(userdir):
         os.makedirs(userdir)
-    await mar.edit_text(title,
-        InlineKeyboardMarkup([[InlineKeyboardButton("Downloading...", callback_data="down")]]))
+    await mar.edit_text("downloading ....")
+
     filepath = os.path.join(userdir, filext)
     # await q.edit_message_reply_markup([[InlineKeyboardButton("Processing..")]])
 
