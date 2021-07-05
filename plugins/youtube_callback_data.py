@@ -51,7 +51,7 @@ async def ytdl(_, message):
         os.makedirs(output_directory)
     thumb_image_path = f"{output_directory}.jpg"
     im.save(thumb_image_path,"jpeg")
-    await sentm.reply_photo(thumb_image_path, caption=title) 
+    await sentm.reply_photo(thumb_image_path) 
 
     #print(q.message.chat.id)
     # Callback Data Check
@@ -111,8 +111,10 @@ async def ytdl(_, message):
 
 
 
-   
+    print(filename)
+    print(ids)
     print(med)
+    print(messageid)
 
 
 
@@ -121,6 +123,7 @@ async def ytdl(_, message):
 
 
     await Client.edit_message_media(ids, messageid, med, filename)
+
 
 
 
