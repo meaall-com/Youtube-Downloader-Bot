@@ -77,7 +77,7 @@ async def ytdl(_, message):
 
     if not os.path.isdir(userdir):
         os.makedirs(userdir)
-    await Client.send_message(message.chat.id ,"downloading ....")
+    await Client.send_message(chat_id=message.chat.id ,"downloading ....")
 
     filepath = os.path.join(userdir, filext)
     # await q.edit_message_reply_markup([[InlineKeyboardButton("Processing..")]])
@@ -117,7 +117,7 @@ async def ytdl(_, message):
             InlineKeyboardMarkup([[InlineKeyboardButton("Uploading...", callback_data="down")]]))
         await c.send_chat_action(chat_id=q.message.chat.id, action="upload_document")
         # this one is not working
-        await sentm.edit_message_media(media=med)
+        await sentm.reply_video(video=med)
     except Exception as e:
         print(e)
         await sentm.edit_message_text(e)
