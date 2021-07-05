@@ -68,7 +68,7 @@ async def ytdl(_, message):
 
 
 
-        img.save(thumb_image_path, "JPEG")
+
      #   print(thumb_image_path)
 
     filext = "%(title)s.%(ext)s"
