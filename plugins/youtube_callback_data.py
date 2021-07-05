@@ -28,6 +28,8 @@ ytregex = r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[
 async def ytdl(_, message):
     url = message.text.strip()
     await message.reply_chat_action("typing")
+    ids = message.chat.id
+    messageid = message.message_id
     try:
         title, thumbnail_url, formats = extractYt(url)
 
@@ -50,7 +52,7 @@ async def ytdl(_, message):
     thumb_image_path = f"{output_directory}.jpg"
     im.save(thumb_image_path,"jpeg")
     await sentm.reply_photo(thumb_image_path, caption=title) 
-    await sentm.delete()
+
     #print(q.message.chat.id)
     # Callback Data Check
     yturl = url
@@ -118,7 +120,7 @@ async def ytdl(_, message):
     await sentm.reply_chat_action("upload_video")
 
 
-    await Client.edit_message_media(message.chat.id, message.message_id, media=med)
+    await Client.edit_message_media(chat_id=ids, message_id=messageid, media=med, file_name=filename)
 
 
 
