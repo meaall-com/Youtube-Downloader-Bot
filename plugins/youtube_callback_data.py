@@ -64,10 +64,10 @@ async def ytdl(_, message):
             width = metadata.get("width")
         if metadata.has("height"):
             height = metadata.get("height")
+            img.resize((90, height))
 
 
 
-        img.resize((90, height))
         img.save(thumb_image_path, "JPEG")
      #   print(thumb_image_path)
 
