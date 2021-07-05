@@ -64,11 +64,10 @@ async def ytdl(_, message):
             width = metadata.get("width")
         if metadata.has("height"):
             height = metadata.get("height")
-        img = Image.open(thumb_image_path)
-        if cb_data.startswith(("audio", "docaudio", "docvideo")):
-            img.resize((320, height))
-        else:
-            img.resize((90, height))
+
+
+
+        img.resize((90, height))
         img.save(thumb_image_path, "JPEG")
      #   print(thumb_image_path)
 
@@ -112,15 +111,15 @@ async def ytdl(_, message):
         print("med not found")
     print(med)
 
-    try:
 
 
-        await sentm.reply_chat_action("upload_video")
+
+    await sentm.reply_chat_action("upload_video")
         # this one is not working
-        await sentm.edit_message_media(media=med)
-    except Exception as e:
-        print(e)
-        await sentm.edit_message_text(e)
+   await sentm.edit_message_media(media=med)
+
+
+
     finally:
         try:
             os.remove(filename)
