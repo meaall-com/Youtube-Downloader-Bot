@@ -120,9 +120,9 @@ async def ytdl(_, message):
 
 
 
-    finally:
-        try:
-            os.remove(filename)
-            os.remove(thumb_image_path)
-        except:
-            pass
+
+    try:
+        os.remove(filename)
+        os.remove(thumb_image_path)
+    except:
+         pass
